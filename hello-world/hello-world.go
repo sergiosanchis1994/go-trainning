@@ -6,16 +6,20 @@ import (
 	"rsc.io/quote"
 )
 
+const Pi float32 = 3.14
+
+const (
+	Sunday = iota + 1
+	Monday
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+)
+
 func main() {
-
-	var (
-		helloWorldMessage string = quote.Hello()
-		goMessage         string = quote.Go()
-	)
-
-	optMessage := quote.Opt()
-
-	fmt.Println(helloWorldMessage)
-	fmt.Println(goMessage)
-	fmt.Println(optMessage)
+	fmt.Println(quote.Hello())
+	fmt.Println(Pi)
+	fmt.Println(Wednesday)
 }
