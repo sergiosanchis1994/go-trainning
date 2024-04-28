@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	const accuracy int = 2
 	var side1, side2 float64
 	fmt.Print("Enter side 1: ")
 	fmt.Scanln(&side1)
@@ -16,6 +17,6 @@ func main() {
 	area := (side1 * side2) / 2
 	perimeter := side1 + side2 + hypotenuse
 
-	fmt.Printf("Area: %f\n", area)
-	fmt.Printf("Perimeter: %f\n", perimeter)
+	fmt.Printf("Area: %.*f\n", accuracy, area)
+	fmt.Printf("Perimeter: %.*f\n", accuracy, perimeter)
 }
