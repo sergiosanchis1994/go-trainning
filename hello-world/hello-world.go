@@ -9,15 +9,13 @@ import (
 func main() {
 	fmt.Println(quote.Hello())
 
-	fullName := "Sergio Sanchis \t (alias \"sergiosanchis1994\")\n"
-	fmt.Println(fullName)
+	var (
+		defaultInt    int
+		defaultUint   uint
+		defaultFloat  float32
+		defaultBool   bool
+		defaultString string
+	)
 
-	var a byte = 'a'
-	fmt.Println(a)
-
-	s := "hello"
-	fmt.Println(s[0])
-
-	var r rune = '❤'
-	fmt.Println(r)
+	fmt.Println(defaultInt, defaultUint, defaultFloat, defaultBool, defaultString)
 }
