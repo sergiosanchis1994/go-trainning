@@ -6,20 +6,18 @@ import (
 	"rsc.io/quote"
 )
 
-const Pi float32 = 3.14
-
-const (
-	Sunday = iota + 1
-	Monday
-	Tuesday
-	Wednesday
-	Thursday
-	Friday
-	Saturday
-)
-
 func main() {
 	fmt.Println(quote.Hello())
-	fmt.Println(Pi)
-	fmt.Println(Wednesday)
+
+	fullName := "Sergio Sanchis \t (alias \"sergiosanchis1994\")\n"
+	fmt.Println(fullName)
+
+	var a byte = 'a'
+	fmt.Println(a)
+
+	s := "hello"
+	fmt.Println(s[0])
+
+	var r rune = '❤'
+	fmt.Println(r)
 }
