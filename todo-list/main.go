@@ -2,24 +2,23 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func main() {
-	var a = [...]int{10, 20, 30, 40, 50}
-	a[0] = 100
-	a[1] = 200
-	fmt.Println("Matrix", a)
+	week := []string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
 
-	for i := 0; i < len(a); i++ {
-		fmt.Println("Matrix position "+strconv.Itoa(i)+": ", a[i])
-	}
+	days := week[0:5]
 
-	for index, value := range a {
-		fmt.Printf("Index: %d, Value %d\n", index, value)
-	}
+	fmt.Println(week)
+	fmt.Println(days)
 
-	var matrix = [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
-	fmt.Println(matrix)
+	days = append(days, "Friday")
+	days = append(days, "Saturday")
+	days = append(days, "Extra day")
+	fmt.Println(days)
 
+	days = append(days[:2], days[3:]...)
+	fmt.Println(days)
+	fmt.Println("Length", len(days))
+	fmt.Println("Cap", cap(days))
 }
