@@ -11,17 +11,7 @@ func main() {
 		"blue":  "#00FF00",
 	}
 
-	fmt.Println(colors["red"])
-	colors["black"] = "#000000"
-	fmt.Println(colors)
-	value, ok := colors["red"]
-	fmt.Println(value, ok)
-	if value, ok = colors["white"]; ok {
-		fmt.Println("Key exists")
-	} else {
-		fmt.Println("Key does not exist")
+	for key, value := range colors {
+		fmt.Printf("%s: %s\n", key, value)
 	}
-	fmt.Println(value, ok)
-	delete(colors, "red")
-	fmt.Println(colors)
 }
