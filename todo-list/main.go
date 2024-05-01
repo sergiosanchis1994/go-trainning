@@ -4,14 +4,17 @@ import (
 	"fmt"
 )
 
-func main() {
-	colors := map[string]string{
-		"red":   "#FF0000",
-		"green": "#00FF00",
-		"blue":  "#00FF00",
-	}
+type Person struct {
+	name  string
+	age   int
+	email string
+}
 
-	for key, value := range colors {
-		fmt.Printf("%s: %s\n", key, value)
-	}
+func main() {
+	p := Person{name: "Sergio", age: 29, email: "sergiosanchis1994@gmail.com"}
+	p2 := Person{name: "Javier", age: 22, email: "javier@gmail.com"}
+	p.age = 30
+	fmt.Println(p)
+	fmt.Println(p.name)
+	fmt.Println(p2)
 }
