@@ -10,11 +10,20 @@ type Person struct {
 	email string
 }
 
+func (p *Person) hello() {
+	fmt.Println("Hello, my name is", p.name)
+}
+
 func main() {
-	p := Person{name: "Sergio", age: 29, email: "sergiosanchis1994@gmail.com"}
-	p2 := Person{name: "Javier", age: 22, email: "javier@gmail.com"}
-	p.age = 30
-	fmt.Println(p)
-	fmt.Println(p.name)
-	fmt.Println(p2)
+	var x int = 10
+	fmt.Println(x)
+	edit(&x)
+	fmt.Println(x)
+
+	p := Person{"Sergio", 30, "sergiosanchis1994@gmail.com"}
+	p.hello()
+}
+
+func edit(x *int) {
+	*x = 20
 }
