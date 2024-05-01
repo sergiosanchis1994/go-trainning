@@ -5,13 +5,23 @@ import (
 )
 
 func main() {
-	slice1 := []int{1, 2, 3, 4, 5}
-	slice2 := make([]int, 5)
+	colors := map[string]string{
+		"red":   "#FF0000",
+		"green": "#00FF00",
+		"blue":  "#00FF00",
+	}
 
-	//target source
-	elements := copy(slice2, slice1)
-
-	fmt.Println("Elements:", elements)
-	fmt.Println(slice1)
-	fmt.Println(slice2)
+	fmt.Println(colors["red"])
+	colors["black"] = "#000000"
+	fmt.Println(colors)
+	value, ok := colors["red"]
+	fmt.Println(value, ok)
+	if value, ok = colors["white"]; ok {
+		fmt.Println("Key exists")
+	} else {
+		fmt.Println("Key does not exist")
+	}
+	fmt.Println(value, ok)
+	delete(colors, "red")
+	fmt.Println(colors)
 }
