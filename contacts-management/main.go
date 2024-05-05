@@ -1,28 +1,19 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"os"
 )
 
-func divide(dividend, divisor int) {
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Println(r)
-		}
-	}()
-	validateZero(divisor)
-	fmt.Println(dividend / divisor)
-}
-
-func validateZero(divisor int) {
-	if divisor == 0 {
-		panic("You cannot divide by 0")
-	}
-}
-
 func main() {
-	divide(100, 10)
-	divide(200, 25)
-	divide(34, 0)
-	divide(100, 4)
+	log.SetPrefix("main(): ")
+	file, err := os.OpenFile("info.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer file.Close()
+
+	log.SetOutput(file)
+	log.Print("Hi! I'm a log message!")
 }
