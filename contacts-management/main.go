@@ -1,13 +1,12 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
 func divide(dividend, divisor int) (int, error) {
 	if divisor == 0 {
-		return 0, errors.New("You cannot divide by 0")
+		return 0, fmt.Errorf("You cannot divide by 0")
 	}
 	return dividend / divisor, nil
 }
