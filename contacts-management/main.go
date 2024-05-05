@@ -2,20 +2,20 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
-func divide(dividend, divisor int) (int, error) {
-	if divisor == 0 {
-		return 0, fmt.Errorf("You cannot divide by 0")
-	}
-	return dividend / divisor, nil
-}
-
 func main() {
-	result, err := divide(10, 0)
+	file, err := os.Create("hello.txt")
 	if err != nil {
-		fmt.Println("Error:", err)
+		fmt.Println(err)
 		return
 	}
-	fmt.Println("Result:", result)
+
+	defer file.Close()
+	_, err = file.Write([]byte("Hello, World!"))
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
